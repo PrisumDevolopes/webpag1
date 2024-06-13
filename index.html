@@ -258,7 +258,7 @@
                 namesList.innerHTML += `
                     <div class="name-entry">
                         <span>${participant.name}</span>
-                        <input type="number" min="1" max="10" value="${participant.tickets}" id="tickets-${index}">
+                        <input type="number" min="1" max="15" value="${participant.tickets}" id="tickets-${index}">
                         <button class="set-button" onclick="setTickets(${index})">Set</button>
                         <button class="remove-button" onclick="promptRemovePassword(${index})">X</button>
                     </div>
@@ -269,7 +269,7 @@
         function setTickets(index) {
             const ticketsInput = document.getElementById(`tickets-${index}`);
             const tickets = parseInt(ticketsInput.value);
-            if (tickets >= 1 && tickets <= 10) {
+            if (tickets >= 1 && tickets <= 15) {
                 participants[index].tickets = tickets;
             } else {
                 ticketsInput.value = participants[index].tickets;
